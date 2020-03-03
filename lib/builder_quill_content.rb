@@ -1,6 +1,5 @@
 require "builder_quill_content/version"
 require "json"
-require "convert_inline"
 
 module BuilderQuillContent
   class Error < StandardError; end
@@ -25,6 +24,8 @@ module BuilderQuillContent
     end
 
     content.gsub('</ul><ul>', '')
+  rescue JSON::ParserError
+    'No content'
   end
 
   def end_of_line(content, line, attributes)
