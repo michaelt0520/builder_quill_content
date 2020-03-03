@@ -1,5 +1,6 @@
 require "builder_quill_content/version"
 require "json"
+require "convert_inline"
 
 module BuilderQuillContent
   class Error < StandardError; end
